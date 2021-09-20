@@ -1,0 +1,13 @@
+.navbar-div {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        border: 2px solid black;
+}
+
+h3 {
+        text-decoration: none;
+        padding: 10px;
+}
+

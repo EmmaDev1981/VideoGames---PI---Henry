@@ -1,0 +1,18 @@
+.landing-div {
+    
+    display:flex;
+    width: auto;
+    height: auto;
+}
+
+img {
+
+    width: 100%;
+    height: auto;
+}
+
+.btn-enter {
+    font-size: 30px;
+    background-color: yellow;
+    border-radius: 5px;
+}
