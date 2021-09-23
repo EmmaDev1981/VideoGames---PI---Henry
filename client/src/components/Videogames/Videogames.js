@@ -8,8 +8,6 @@ function Videogames() {
             <NavBar/>
             <SearchBar/>
             <h1>Home</h1>
-            <input></input>
-            <button>Buscar</button>
         </div>
     )
 }
