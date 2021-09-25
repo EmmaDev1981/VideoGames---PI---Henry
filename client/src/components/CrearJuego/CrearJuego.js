@@ -82,7 +82,7 @@ function CrearJuego() {
         // if (Object.values(errors).length || checkboxsErrors.length) {
         //     return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
         // }
-        axios.post('http://localhost:3000/videogame', form)
+        axios.post('http://localhost:3001/videogame', form)
         alert(`${form.name} created succesfully`)
     }
 

@@ -1,22 +1,19 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'
+import { getAllGames, getGenres } from '../../actions/actions';
 
+//*CSS
 import imagen from '../../img/landing.jpg'
 import './landing.css'
 
-function Landing() {
+function Landing({getAllGames, getGenres}) {
 
-
-  // const dispatch = useDispatch();
-
-  // //Cargo mi store, searchAllGames y processGames para trabajar con este último
-  // useEffect(() => {
-  //   let initial = async function() {
-  //     await dispatch(getAllGames());
-  //     await dispatch(getGenres());
-  //     }
-  //     initial();
-  // }, []);
+  //* Cargo mi store
+  useEffect(() => {
+      getAllGames();
+      getGenres();
+  });
 
 
   return (
@@ -27,4 +24,4 @@ function Landing() {
   );
 }
 
-export default Landing;
+export default connect(null, {getAllGames, getGenres} )(Landing)

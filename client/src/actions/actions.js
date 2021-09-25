@@ -9,7 +9,7 @@ import { GET_ALL_GAMES,
 //* carga todos los juegos
 export function getAllGames() {
     return function(dispatch) {
-        return axios.get('http://localhost:3000/videogames/')
+        return axios.get('http://localhost:3001/videogames/')
         .then(res => {
             dispatch({type: GET_ALL_GAMES, payload: res.data})
         })
@@ -20,7 +20,7 @@ export function getAllGames() {
 //* carga todos los juegos buscados por nombre
 export function searchByName(name) {
     return function (dispatch) {
-        return axios.get(`http://localhost:3000/videogames?name=${name}`)
+        return axios.get(`http://localhost:3001/videogames?name=${name}`)
         .then(res => {
 
             dispatch({ type: SEARCH_BY_NAME, payload: res.data });
@@ -32,7 +32,7 @@ export function searchByName(name) {
 //* cargo los detalles del juego por ID
 export function getVideogameDetail(id) {
     return function (dispatch) {
-        axios.get(`http://localhost:3000/videogame/${id}`)
+        axios.get(`http://localhost:3001/videogame/${id}`)
         .then(res => {
 
             dispatch({ type: GET_VIDEOGAME_DETAIL, payload: res.data });
@@ -44,7 +44,7 @@ export function getVideogameDetail(id) {
 //* cargo todos los generos
 export function getGenres(){
 	return function(dispatch){
-		axios.get(`http://localhost:3000/genres`)
+		axios.get(`http://localhost:3001/genres`)
         .then(res => {
 
             dispatch({ type: GET_GENRES, payload: res.data });

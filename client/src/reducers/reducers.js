@@ -22,9 +22,9 @@ export default function rootReducer(state = initialState, action) {
             };
             case GET_VIDEOGAME_DETAIL:
                 return {
-                    ...state,
-                    gameDetails: action.payload
-                };
+                ...state,
+                gameDetails: action.payload
+            };
             case SEARCH_BY_NAME:
             return {
                 ...state,
@@ -35,7 +35,6 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 genres: action.payload
             };
-    
         default: 
             return state;
     }
