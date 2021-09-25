@@ -1,7 +1,6 @@
 import {React, useState} from 'react'
 import NavBar from '../NavBar/NavBar'
 import axios from 'axios'
-// import imageNewGame from '../../img/default_newgame.png'
 import './CrearJuego.css'
 
 function CrearJuego() {
@@ -76,12 +75,12 @@ function CrearJuego() {
     const handleSubmit = e => {
         e.preventDefault()
         validate(form);
-        // let checkboxsErrors = []
-        // if (form.genres.length < 1) checkboxsErrors.push('Genres is required');
-        // if (form.platforms.length < 1) checkboxsErrors.push('Platforms is required');
-        // if (Object.values(errors).length || checkboxsErrors.length) {
-        //     return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
-        // }
+        let checkboxsErrors = []
+        if (form.genres.length < 1) checkboxsErrors.push('Genres is required');
+        if (form.platforms.length < 1) checkboxsErrors.push('Platforms is required');
+        if (Object.values(errors).length || checkboxsErrors.length) {
+            return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
+        }
         axios.post('http://localhost:3001/videogame', form)
         alert(`${form.name} created succesfully`)
     }
@@ -89,9 +88,8 @@ function CrearJuego() {
     return (
         <div className="">
             <NavBar />
-            <div className="">
-                <div className="">
-                    <h1 className="">Crea tu propio Juego</h1>
+            <div className="container-add">
+                <div className="div-cont">
                     <form onSubmit={handleSubmit} onChange={handleChange}>
                         <label htmlFor='name'>Name: </label>
                         <br />
@@ -109,17 +107,17 @@ function CrearJuego() {
                         <br />
                         <input name='rating' className="" placeholder='Rate from 1 to 5' type="tel" id="rating" maxLength='1' />
                         <br />
-                        <div id='genres' className="">
-                            <label className="">Genres </label>
-                            <div className="">
+                        <label className="">Genres </label>
+                        <div id='genres' className="genres-div">
+                            <div className="Action">
                                 <label htmlFor="Action">Action</label>
                                 <input name='Action' value='1' type="checkbox" id="Action" />
                             </div>
-                            <div className="">
+                            <div className="indie">
                                 <label htmlFor="Indie">Indie</label>
                                 <input name='Indie' value='2' type="checkbox" id="Indie" />
                             </div>
-                            <div className="">
+                            <div className="Adventure">
                                 <label htmlFor="Adventure">Adventure</label>
                                 <input name='Adventure' value='3' type="checkbox" id="Adventure" />
                             </div>
@@ -172,8 +170,8 @@ function CrearJuego() {
                                 <input name='Fighting' value='15' type="checkbox" id="Fighting" />
                             </div>
                         </div>
-                        <div id='platforms' className="">
-                            <label className="">Platforms </label>
+                        <label className="">Platforms </label>
+                        <div id='platforms' className="plat-div">
                             <div className="">
                                 <label htmlFor="PC">PC</label>
                                 <input name='PC' type="checkbox" id="PC" />

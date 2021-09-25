@@ -1,0 +1,23 @@
+.container-detail {
+    justify-content: center;
+}
+
+.details-div {
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.details-div img{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    width: 1000px;
+    height: 700px;
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}

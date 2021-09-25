@@ -2,34 +2,36 @@ import {React, useEffect} from 'react'
 import { connect }from 'react-redux'
 import { getVideogameDetail } from '../../actions/actions'
 import Navbar from '../NavBar/NavBar'
+import './gamedetail.css'
 
 function GameDetails(props) {
 
-    const {getgameDetails, gameDetails} = props
+    const {getVideogameDetail, gameDetails} = props
     const {idVideogame} = props.match.params;
 
     // me carga los details del juego
     useEffect(() => {
-    getgameDetails(idVideogame);
-    },[])
+    getVideogameDetail(idVideogame);
+    },[idVideogame])
 
 
     return (
-        <div className="">
+        <div className="container-detail">
             <Navbar />
-            <div className="">
-                <div className="">
+                <div className="details-div">
                     {gameDetails ? <div>
-                        <h3 className="">{gameDetails.name}</h3>
-                        <img className="" src={gameDetails.background_image || 'https://myvideogamelist.com/assets/images/default.png'} alt="" />
-                        <p className="">{gameDetails.description.replace(/(<([^>]+)>)/ig, '')}</p>
-                        <p className="">{`Genres: ${gameDetails.genres.join(', ')}`}</p>
-                        <p className="">{`Platforms: ${typeof gameDetails.platforms === 'string' ? gameDetails.platforms : gameDetails.platforms.join(', ')}`}</p>
-                        <p className="">{`Release Date: ${gameDetails.releaseDate || 'None'}`}</p>
+                        <h3 className="name">{gameDetails.name}</h3>
+                        <img src={gameDetails.background_image} alt="" />
+                        {<p className="">{`Release Date: ${gameDetails.releaseDate || 'None'}`}</p>}
                         <p className="">{`Rating: ★ ${gameDetails.rating}`}</p>
                     </div> : <h1>Cargando</h1>}
+                    
+                    {(gameDetails.description && gameDetails.genres && gameDetails.platforms) ? <div>
+                        {<p className="">{gameDetails.description.replace(/(<([^>]+)>)/ig, '')}</p>}
+                        {<p className="">{`Genres: ${gameDetails.genres.join(', ')}`}</p>}
+                        {<p className="">{`Platforms: ${typeof gameDetails.platforms === 'string' ? gameDetails.platforms : gameDetails.platforms.join(', ')}`}</p>}
+                    </div> : <h1>Cargando</h1>}
                 </div>
-            </div>
         </div >
     )
 }

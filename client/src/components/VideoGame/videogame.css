@@ -1,0 +1,40 @@
+.container-game {
+    flex-wrap: wrap;
+    border: 1px solid black;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: beige;
+}
+
+.game-div {
+    display: flex;
+    margin: 10px;
+    overflow: hidden;
+    width: 400px;
+    height: 600px;
+}
+
+.game-div img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+    border-radius: 10px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.infoCont {
+    display: flex;
+    justify-content: center;
+}
+
+.infoCont button {
+    cursor: pointer;
+}

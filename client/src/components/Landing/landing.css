@@ -1,22 +1,21 @@
 .landing-div {
-    display: grid;
-    position: relative;
-    height: 100%;
-    width: 100vh;
-    align-items: center;
-    justify-content: center;
+    position:relative;
+    display:inline-block;
+    text-align:center;
+
 }
 
-img {
-
-    background-size: cover;
-    height: 100vh;
-    width: 100%;
+.landing-div img {
+    background-size: contain;
+    max-height: auto;
+    max-width: 100%;
 }
 
 .btn-enter {
+    position: absolute;
     background-color: yellow;
     border-radius: 5px;
     font-size: 30px;
-
+    left: 50%;
+    top: 50%;
 }

@@ -1,0 +1,37 @@
+.container-add {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 900px;
+}
+
+.div-cont {
+    display: flex;
+    justify-content: center;
+}
+
+.name-add {
+    display: flex;
+    justify-content: center;
+    color: blue;
+    border: 1px solid black;
+}
+
+.genres-div {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width:500px;
+}
+
+.plat-div {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width:500px;
+}

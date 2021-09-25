@@ -1,0 +1,16 @@
+.pag-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+}
+
+li {
+    list-style:none;
+    margin: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+}

@@ -1,0 +1,10 @@
+.container-div{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+.selectCont {
+    margin: 20px;
+    width: 300px;
+}

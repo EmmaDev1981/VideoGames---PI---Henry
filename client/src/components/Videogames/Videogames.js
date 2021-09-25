@@ -4,6 +4,8 @@ import SearchBar from '../SearchBar/SearchBar'
 import { connect } from 'react-redux'
 import Videogame from '../VideoGame/Videogame'
 import Pagination from '../Pagination/Pagination'
+import './videogames.css'
+import FilterBy from '../FilterBy/FilterBy'
 
 function Videogames({allGames}) {
 
@@ -13,18 +15,21 @@ function Videogames({allGames}) {
     const indexOfLastCard = currentPage * cardPerPage
     const indexOfFirstCard = indexOfLastCard - cardPerPage;
     var currentCards = allGames.slice(indexOfFirstCard, indexOfLastCard)
-
+    
     const paginate = (pageNumber) => {
          setCurrentPage(pageNumber)
     }
 
     return (
-        <div>
+        <div className="container">
             <NavBar/>
             <SearchBar/>
-            <h1>home</h1>
+            <FilterBy />
             <Pagination cardPerPage={cardPerPage} totalCards={allGames.length} paginate={paginate} currentPage={currentPage} />
-            {currentCards && currentCards.map((g) => <Videogame key={g.id} name={g.name} genres={g.genres} image={g.image} id={g.id}/>)}
+            <div className="games-div">
+               {currentCards && currentCards.map((g) => <Videogame key={g.id} name={g.name} genres={g.genres} image={g.background_image} id={g.id}/>)}
+            </div>
+            <Pagination cardPerPage={cardPerPage} totalCards={allGames.length} paginate={paginate} currentPage={currentPage} />
         </div>
     )
 }

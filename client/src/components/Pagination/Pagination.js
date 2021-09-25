@@ -1,4 +1,5 @@
 import React, {} from 'react'
+import './pagination.css'
 
 
 export default function Pagination({ cardPerPage, totalCards, paginate, currentPage }) {
@@ -8,7 +9,7 @@ export default function Pagination({ cardPerPage, totalCards, paginate, currentP
         pageNumbers.push(i);
     }
     return (
-        <div className="">
+        <div className="pag-div">
             <ul>
                 {pageNumbers && pageNumbers.map(p => 
                 p === currentPage ? <li><button  className="" onClick={() => paginate(p)}>{p}</button></li> : <li><button className="" onClick={() => paginate(p)}>{p}</button></li>)}

@@ -1,14 +1,15 @@
 //* importo constantes
 import { GET_ALL_GAMES, 
-         SEARCH_BY_NAME, 
+         SEARCH_BY_NAME,
          GET_VIDEOGAME_DETAIL,
-         GET_GENRES } from "../actions/constantes";
+         GET_GENRES,
+         ORDER_BY } from "../actions/constantes";
 
 //* creo un objeto para iniciar el state
 const initialState = {
     allGames: [],
+    gamesBackUp: [],
     gameDetails: {},
-    searchedGame: [],
     genres: []
 };
 
@@ -18,7 +19,7 @@ export default function rootReducer(state = initialState, action) {
         case GET_ALL_GAMES:
             return {
                 ...state,
-                allGames: action.payload
+                allGames: action.payload, gamesBackUp: action.payload
             };
             case GET_VIDEOGAME_DETAIL:
                 return {
@@ -28,13 +29,41 @@ export default function rootReducer(state = initialState, action) {
             case SEARCH_BY_NAME:
             return {
                 ...state,
-                searchedGame: action.payload
+                allGames: action.payload
             };
             case GET_GENRES:
             return {
                 ...state,
                 genres: action.payload
             };
+            case ORDER_BY:
+                if(action.payload === 'default'){
+                    return {...state, allGames: state.gamesBackUp}
+                }
+                if(action.payload === 'A-Z'){
+                    return {...state, allGames: [...state.gamesBackUp].sort((prev, next) => {
+                    if(prev.name > next.name) return 1
+                    if(prev.name < next.name) return -1
+                    return 0
+                    })}}
+                if(action.payload === 'Z-A'){
+                    return {...state, allGames: [...state.gamesBackUp].sort((prev, next) => {
+                    if(prev.name > next.name) return -1
+                    if(prev.name < next.name) return 1
+                    return 0
+                    })}}
+                if(action.payload === 'desc'){
+                    return {...state, allGames: [...state.gamesBackUp].sort((prev,next) => prev.rating - next.rating)}
+                }
+                if(action.payload === 'asc'){
+                    return {...state, allGames: [...state.gamesBackUp].sort((prev,next) => next.rating - prev.rating)}
+                }
+                else {
+                    return {...state, allGames: state.gamesBackUp.filter((game) => {
+                        return game.genres.find((genre) => {
+                            return genre.name === action.payload})
+                    })}    
+                };
         default: 
             return state;
     }

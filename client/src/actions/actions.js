@@ -4,7 +4,8 @@ import axios from 'axios';
 import { GET_ALL_GAMES,
          SEARCH_BY_NAME, 
          GET_VIDEOGAME_DETAIL,
-         GET_GENRES } from './constantes'
+         GET_GENRES,
+         ORDER_BY } from './constantes'
 
 //* carga todos los juegos
 export function getAllGames() {
@@ -31,6 +32,7 @@ export function searchByName(name) {
 
 //* cargo los detalles del juego por ID
 export function getVideogameDetail(id) {
+    console.log(id)
     return function (dispatch) {
         axios.get(`http://localhost:3001/videogame/${id}`)
         .then(res => {
@@ -50,5 +52,12 @@ export function getGenres(){
             dispatch({ type: GET_GENRES, payload: res.data });
         })
         .catch(err => {return err})
+    }
+}
+
+//* ordenamiento
+export function orderBy(order) {
+    return function (dispatch) {
+        dispatch({type: ORDER_BY, payload: order})
     }
 }
