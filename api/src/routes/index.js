@@ -60,6 +60,7 @@ router.get('/videogames', async (req, res) => {
 // GET /videogame/:idVideoGame
 router.get('/videogame/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params
+    console.log(req.params)
     if (idVideogame.includes('-')) {
         let videogameDb = await Videogame.findOne({
             where: {
