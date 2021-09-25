@@ -13,20 +13,18 @@ module.exports = (sequelize) => {
       allowNull: false
     },
     platforms: {
-      type: DataTypes.ARRAY(DataTypes.JSON({type:DataTypes.JSON(DataTypes.STRING)})),
+      type: DataTypes.STRING,
       allowNull: false
     }, 
-    released: {
+    releaseDate: {
       type: DataTypes.STRING
     },
     rating: {
-      type: DataTypes.STRING
-    },
-    image: {
-      type: DataTypes.TEXT
+      type: DataTypes.INTEGER
     },
     id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     }
   });
