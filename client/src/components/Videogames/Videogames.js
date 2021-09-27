@@ -4,8 +4,8 @@ import SearchBar from '../SearchBar/SearchBar'
 import { connect } from 'react-redux'
 import Videogame from '../VideoGame/Videogame'
 import Pagination from '../Pagination/Pagination'
-import './videogames.css'
 import FilterBy from '../FilterBy/FilterBy'
+import './videogames.css'
 
 function Videogames({allGames}) {
 

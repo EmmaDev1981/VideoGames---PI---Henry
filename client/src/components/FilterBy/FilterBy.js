@@ -2,11 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { orderBy } from '../../actions/actions'
 import './FilterBy.css'
-// import SearchBar from '../SearchBar/SearchBar'
 
 function FilterBy({orderBy, genres}) {
-
-    console.log(genres)
 
     const handleSelect = (e) => {
         orderBy(e.target.value)
@@ -27,7 +24,6 @@ function FilterBy({orderBy, genres}) {
                     {genres && genres.map(g => <option key={g.name} value={g.name}>{g.name}</option>)}
                 </optgroup>                
             </select>
-            {/* <SearchBar SearchVideogames={SearchVideogames} /> */}
         </div>
     )
 }

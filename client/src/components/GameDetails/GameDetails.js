@@ -2,6 +2,7 @@ import {React, useEffect} from 'react'
 import { connect }from 'react-redux'
 import { getVideogameDetail } from '../../actions/actions'
 import Navbar from '../NavBar/NavBar'
+import photo from '../../img/notphoto.jpg'
 import './gamedetail.css'
 
 function GameDetails(props) {
@@ -21,7 +22,8 @@ function GameDetails(props) {
                 <div className="details-div">
                     {gameDetails ? <div>
                         <h3 className="name">{gameDetails.name}</h3>
-                        <img src={gameDetails.background_image} alt="" />
+                        {gameDetails.background_image ? <img src={gameDetails.background_image} alt="Videogame" className="Img"></img> : <img src={photo} alt="Videogame" className="Img"></img>}
+                        {/* <img src={gameDetails.background_image} alt="" /> */}
                         {<p className="">{`Release Date: ${gameDetails.releaseDate || 'None'}`}</p>}
                         <p className="">{`Rating: ★ ${gameDetails.rating}`}</p>
                     </div> : <h1>Cargando</h1>}

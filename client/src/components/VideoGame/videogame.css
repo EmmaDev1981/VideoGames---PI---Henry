@@ -30,11 +30,16 @@
     font-weight: 600;
 }
 
-.infoCont {
+.infoContGenres {
     display: flex;
     justify-content: center;
 }
 
-.infoCont button {
+.div-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
     cursor: pointer;
 }

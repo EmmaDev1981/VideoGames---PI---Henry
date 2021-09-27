@@ -32,7 +32,6 @@ export function searchByName(name) {
 
 //* cargo los detalles del juego por ID
 export function getVideogameDetail(id) {
-    console.log(id)
     return function (dispatch) {
         axios.get(`http://localhost:3001/videogame/${id}`)
         .then(res => {

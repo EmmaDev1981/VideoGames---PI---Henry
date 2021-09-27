@@ -1,14 +1,5 @@
 .landing-div {
-    position:relative;
-    display:inline-block;
-    text-align:center;
-
-}
-
-.landing-div img {
-    background-size: contain;
-    max-height: auto;
-    max-width: 100%;
+    background-color: aqua;
 }
 
 .btn-enter {
@@ -17,5 +8,14 @@
     border-radius: 5px;
     font-size: 30px;
     left: 50%;
-    top: 50%;
+    top: 70%;
+}
+
+.img-land {
+    display: block;
+}
+
+.img-land img{
+    width: 100%;
+    height: 100%;
 }
