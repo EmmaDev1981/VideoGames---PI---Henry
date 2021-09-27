@@ -21,7 +21,7 @@ router.get('/videogames', async (req, res) => {
         ...el,
         genres: el.genres.map(g => g.name)
     }), [])
-
+    
     if (req.query.name) {
         try {
             let response = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${APIKEY}`);
@@ -60,7 +60,6 @@ router.get('/videogames', async (req, res) => {
 // GET /videogame/:idVideoGame
 router.get('/videogame/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params
-    console.log(req.params)
     if (idVideogame.includes('-')) {
         let videogameDb = await Videogame.findOne({
             where: {
@@ -94,9 +93,11 @@ router.get('/videogame/:idVideogame', async (req, res) => {
 })
 // GET a /genres
 router.get('/genres', async (req, res) => {
+    // si ya los tengo cargados en la DB los utilizo desde alli
     const genresDb = await Genre.findAll();
-    if (genresDb.length) return res.send(`Ya existen generos en la Base de Datos, longitud: ${genresDb.length}`)
+    if (genresDb.length) return res.json(genresDb) 
 
+    //else --> los voy a buscar a la API y los guardo en la DB
     const response = await axios.get(`https://api.rawg.io/api/genres?key=${APIKEY}`);
     const genres = response.data.results;
     genres.forEach(async g => {
@@ -119,7 +120,7 @@ router.post('/videogame', async (req, res) => {
                 description,
                 releaseDate,
                 rating,
-                platforms
+                platforms,
             }
         })
         await gameCreated[0].setGenres(genres);
