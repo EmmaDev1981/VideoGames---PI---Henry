@@ -3,6 +3,7 @@ import { connect }from 'react-redux'
 import { getVideogameDetail } from '../../actions/actions'
 import Navbar from '../NavBar/NavBar'
 import photo from '../../img/notphoto.jpg'
+import { NavLink } from 'react-router-dom'
 import './gamedetail.css'
 
 function GameDetails(props) {
@@ -21,17 +22,17 @@ function GameDetails(props) {
             <Navbar />
                 <div className="details-div">
                     {gameDetails ? <div>
-                        <h3 className="name">{gameDetails.name}</h3>
-                        {gameDetails.background_image ? <img src={gameDetails.background_image} alt="Videogame" className="Img"></img> : <img src={photo} alt="Videogame" className="Img"></img>}
-                        {/* <img src={gameDetails.background_image} alt="" /> */}
-                        {<p className="">{`Release Date: ${gameDetails.releaseDate || 'None'}`}</p>}
-                        <p className="">{`Rating: ★ ${gameDetails.rating}`}</p>
+                        <h3 className="title">{gameDetails.name}</h3>
+                        {gameDetails.background_image ? <div className="div-img"><img src={gameDetails.background_image} alt="Videogame" ></img></div> : <div className="div-img"><img src={photo} alt="Videogame" ></img></div>}
+                        {<p><strong>Release Date</strong>: {`${gameDetails.releaseDate || 'None'}`}</p>}
+                        <p><strong>Rating</strong>: ★ {`${gameDetails.rating}`}</p>
+                    {(gameDetails.description && gameDetails.genres && gameDetails.platforms) ? <div className="div-descr">
+                        {<p className="descripcion">{gameDetails.description.replace(/(<([^>]+)>)/ig, '')}</p>}
+                        {<p><strong>Genres</strong>: {`${gameDetails.genres.join(', ')}`}</p>}
+                        {<p><strong>Platforms</strong>: {`${typeof gameDetails.platforms === 'string' ? gameDetails.platforms : gameDetails.platforms.join(', ')}`}</p>}
+                        <NavLink to="/videogames"><h3>Volver</h3></NavLink>
                     </div> : <h1>Cargando</h1>}
                     
-                    {(gameDetails.description && gameDetails.genres && gameDetails.platforms) ? <div>
-                        {<p className="">{gameDetails.description.replace(/(<([^>]+)>)/ig, '')}</p>}
-                        {<p className="">{`Genres: ${gameDetails.genres.join(', ')}`}</p>}
-                        {<p className="">{`Platforms: ${typeof gameDetails.platforms === 'string' ? gameDetails.platforms : gameDetails.platforms.join(', ')}`}</p>}
                     </div> : <h1>Cargando</h1>}
                 </div>
         </div >

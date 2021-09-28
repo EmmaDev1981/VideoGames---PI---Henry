@@ -3,7 +3,7 @@ import NavBar from '../NavBar/NavBar'
 import axios from 'axios'
 import './CrearJuego.css'
 
-function CrearJuego() {
+function CrearJuego(props) {
 
     const [errors, setErrors] = useState({ form: 'Must complete the form' });
     const [form, setForm] = useState({
@@ -83,134 +83,140 @@ function CrearJuego() {
         }
         axios.post('http://localhost:3001/videogame', form)
         alert(`${form.name} created succesfully`)
+        props.history.push('/videogames')
     }
 
     return (
-        <div className="">
-            <NavBar />
+        <>
+        <NavBar />
+        <div className="main-add">
             <div className="container-add">
+                <h2>CREATE GAME - DETAILS -</h2>
                 <div className="div-cont">
                     <form onSubmit={handleSubmit} onChange={handleChange}>
-                        <label htmlFor='name'>Name: </label>
+                        <label htmlFor='name' className="title-name"><strong>Name: </strong></label>
                         <br />
-                        <input placeholder='Name' type="text" id='name' className="" name='name' />
+                        <input className="name" placeholder='Name' type="text" id='name' name='name' autocomplete="off"/>
                         <br />
-                        <label htmlFor="description">Description: </label>
+                        <label htmlFor="description" className="title-name"><strong>Description: </strong></label>
                         <br />
-                        <textarea name='description' placeholder='Description...' className="" id="description" cols="30" rows="3" />
+                        <textarea className="name" name='description' placeholder='Description...' id="description" cols="30" rows="3" />
                         <br />
-                        <label htmlFor="date">Release Date: </label>
+                        <label htmlFor="date" className="title-name"><strong>Release Date: </strong></label>
                         <br />
-                        <input name='releaseDate' className="" type="date" id="date" required />
+                        <input name='releaseDate' className="dt" type="date" id="date" required />
                         <br />
-                        <label htmlFor="rating">Rating: </label>
+                        <label htmlFor="rating" className="title-name"><strong>Rating: </strong></label>
                         <br />
-                        <input name='rating' className="" placeholder='Rate from 1 to 5' type="tel" id="rating" maxLength='1' />
+                        <input name='rating' className="dt" placeholder='Rate from 1 to 5' type="tel" id="rating" maxLength='1' autocomplete="off"/>
                         <br />
-                        <label className="">Genres </label>
+                        <label className="title-name"><strong>Genres:</strong></label>
                         <div id='genres' className="genres-div">
                             <div className="Action">
-                                <label htmlFor="Action">Action</label>
                                 <input name='Action' value='1' type="checkbox" id="Action" />
+                                <label htmlFor="Action">Action.</label>
                             </div>
                             <div className="indie">
-                                <label htmlFor="Indie">Indie</label>
                                 <input name='Indie' value='2' type="checkbox" id="Indie" />
+                                <label htmlFor="Indie">Indie.</label>
                             </div>
                             <div className="Adventure">
-                                <label htmlFor="Adventure">Adventure</label>
                                 <input name='Adventure' value='3' type="checkbox" id="Adventure" />
+                                <label htmlFor="Adventure">Adventure.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="RPG">RPG</label>
+                            <div>
                                 <input name='RPG' value='4' type="checkbox" id="RPG" />
+                                <label htmlFor="RPG">RPG.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Strategy">Strategy</label>
+                            <div>
                                 <input name='Strategy' value='5' type="checkbox" id="Strategy" />
+                                <label htmlFor="Strategy">Strategy.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Shooter">Shooter</label>
+                            <div>
                                 <input name='Shooter' value='6' type="checkbox" id="Shooter" />
+                                <label htmlFor="Shooter">Shooter.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Casual">Casual</label>
+                            <div>
                                 <input name='Casual' value='7' type="checkbox" id="Casual" />
+                                <label htmlFor="Casual">Casual.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Simulation">Simulation</label>
+                            <div>
                                 <input name='Simulation' value='8' type="checkbox" id="Simulation" />
+                                <label htmlFor="Simulation">Simulation.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Puzzle">Puzzle</label>
+                            <div>
                                 <input name='Puzzle' value='9' type="checkbox" id="Puzzle" />
+                                <label htmlFor="Puzzle">Puzzle.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Arcade">Arcade</label>
+                            <div>
                                 <input name='Arcade' value='10' type="checkbox" id="Arcade" />
+                                <label htmlFor="Arcade">Arcade.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Platformer">Platformer</label>
+                            <div>
                                 <input name='Platformer' value='11' type="checkbox" id="Platformer" />
+                                <label htmlFor="Platformer">Platformer.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Racing">Racing</label>
+                            <div>
                                 <input name='Racing' value='12' type="checkbox" id="Racing" />
+                                <label htmlFor="Racing">Racing.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Massively-Multiplayer">Massively-Multiplayer</label>
+                            <div>
                                 <input name='Massively-Multiplayer' value='13' type="checkbox" id="Massively-Multiplayer" />
+                                <label htmlFor="Massively-Multiplayer">Massively-Multiplayer.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Sports">Sports</label>
+                            <div>
                                 <input name='Sports' value='14' type="checkbox" id="Sports" />
+                                <label htmlFor="Sports">Sports.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Fighting">Fighting</label>
+                            <div>
                                 <input name='Fighting' value='15' type="checkbox" id="Fighting" />
+                                <label htmlFor="Fighting">Fighting.</label>
                             </div>
                         </div>
-                        <label className="">Platforms </label>
+                        <label className="title-name"><strong>Platforms: </strong> </label>
                         <div id='platforms' className="plat-div">
-                            <div className="">
-                                <label htmlFor="PC">PC</label>
+                            <div>
                                 <input name='PC' type="checkbox" id="PC" />
+                                <label htmlFor="PC">PC.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="iOS">iOS</label>
+                            <div>
                                 <input name='iOS' type="checkbox" id="iOS" />
+                                <label htmlFor="iOS">iOS.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="Android">Android</label>
+                            <div>
                                 <input name='Android' type="checkbox" id="Android" />
+                                <label htmlFor="Android">Android.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="macOS">macOS</label>
+                            <div>
                                 <input name='macOS' type="checkbox" id="macOS" />
+                                <label htmlFor="macOS">macOS.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="PlayStation 4">PlayStation 4</label>
+                            <div>
                                 <input name='PlayStation 4' type="checkbox" id="PlayStation 4" />
+                                <label htmlFor="PlayStation 4">PlayStation 4.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="PlayStation 5">PlayStation 5</label>
+                            <div>
                                 <input name='PlayStation 5' type="checkbox" id="PlayStation 5" />
+                                <label htmlFor="PlayStation 5">PlayStation 5.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="XBOX">XBOX</label>
+                            <div>
                                 <input name='XBOX' type="checkbox" id="XBOX" />
+                                <label htmlFor="XBOX">XBOX.</label>
                             </div>
-                            <div className="">
-                                <label htmlFor="PS Vita">PS Vita</label>
+                            <div>
                                 <input name='PS Vita' type="checkbox" id="PS Vita" />
+                                <label htmlFor="PS Vita">PS Vita.</label>
                             </div>
                         </div>
                         <br />
-                        <button className="" type='submit'>Create</button>
+                        <div className="div-but-form">
+                        <button type='submit'>Create</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

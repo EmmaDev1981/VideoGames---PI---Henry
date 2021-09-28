@@ -12,11 +12,9 @@ const initialState = {
     gameDetails: {},
     genres: []
 };
-console.log(initialState.allGames)
 
 //* creo el "reducer" que luego paso al store por argumento
 export default function rootReducer(state = initialState, action) {
-    console.log(action.payload)
     switch (action.type) {
         case GET_ALL_GAMES:
             return {
@@ -59,6 +57,12 @@ export default function rootReducer(state = initialState, action) {
                 }
                 if(action.payload === 'asc'){
                     return {...state, allGames: [...state.gamesBackUp].sort((prev,next) => next.rating - prev.rating)}
+                }
+                if(action.payload === 'DB'){
+                    return {...state, allGames: state.gamesBackUp.filter((game)=> (typeof game.id) === 'string')}
+                }
+                if(action.payload === 'API'){
+                    return {...state, allGames: state.gamesBackUp.filter((game)=> (typeof game.id) === 'number')}
                 }
                 else {
                      return {...state, allGames: state.gamesBackUp.filter((game) => {

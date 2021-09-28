@@ -1,13 +1,21 @@
 import React from 'react'
 import NavBar from '../NavBar/NavBar'
+import imagen from '../../img/videogame.png'
+import './about.css'
 
 
 function About() {
     return (
-        <div>
-            <NavBar />
-            <h1>ABOUT</h1>
+        <>
+        <NavBar />
+        <div className="container-about">
+            <h1>Individual Project - Henry Videogames</h1>
+            <h1>Emmanuel Navas - 16B</h1>
+            <div className="div-foto">
+               <img src={imagen} alt="foto"></img>
+            </div>
         </div>
+        </>
     )
 }
 

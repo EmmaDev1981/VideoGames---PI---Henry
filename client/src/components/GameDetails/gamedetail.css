@@ -3,21 +3,55 @@
 }
 
 .details-div {
+    display: flex;
+    justify-content: center;
     border: 1px solid black;
     margin: 10px;
 }
 
+.details-div p {
+    display: flex;
+    justify-content: center;
+}
+
+.div-img {
+    display: flex;
+    justify-content: center;
+}
+
 .details-div img{
+    border: 5px solid black;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     text-align: center;
     margin: 10px;
-    width: 1000px;
-    height: 700px;
+    width: 800px;
+    height: 500px;
 }
 
-.name {
+.title {
     display: flex;
     justify-content: center;
-    font-size: x-large;
+    font-size:xx-large;
+}
+
+.div-descr {
+    margin: 20px;
+}
+
+.div-descr p {
+    display: flex;
+    justify-content: center;
+}
+
+.descripcion {
+    text-align: justify;
+}
+
+.div-descr h3 {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    padding: 10px;
 }

@@ -1,11 +1,24 @@
-.container-add {
+.main-add {
     display: flex;
-    align-items: center;
-    justify-items: center;
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid black;
-    width: 900px;
+    justify-content: center;
+
+}
+
+
+.container-add {
+
+    margin: 40px;
+    padding: 20px;
+    padding-bottom: 20px;
+    border: 5px solid black;
+    width: 800px;
+    background-color: coral;
+    height: 590px;
+    border-radius: 15px;
+}
+
+.container-add h2 {
+    text-align: center;
 }
 
 .div-cont {
@@ -13,19 +26,14 @@
     justify-content: center;
 }
 
-.name-add {
-    display: flex;
-    justify-content: center;
-    color: blue;
-    border: 1px solid black;
-}
-
 .genres-div {
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
-    width:500px;
+    width:650px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
 }
 
 .plat-div {
@@ -33,5 +41,44 @@
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
-    width:500px;
+    width:650px;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+}
+
+.container-add label {
+    font-size: large;
+    margin: 3px;
+}
+
+.name{
+    height: 25px;
+    width: 400px;
+}
+
+.dt {
+    height: 25px;
+    width: 200px;
+}
+
+.div-but-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.div-but-form button {
+    width: 100px;
+    height: 40px;
+    background-color: blanchedalmond;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.container-add input {
+    background-color: blanchedalmond;
+}
+
+.container-add textarea {
+    background-color: blanchedalmond;
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import NavBar from '../NavBar/NavBar'
 import SearchBar from '../SearchBar/SearchBar'
 import { connect } from 'react-redux'
@@ -6,11 +6,12 @@ import Videogame from '../VideoGame/Videogame'
 import Pagination from '../Pagination/Pagination'
 import FilterBy from '../FilterBy/FilterBy'
 import './videogames.css'
+import { getAllGames, getGenres } from '../../actions/actions'
 
-function Videogames({allGames}) {
+function Videogames({allGames, getAllGames, getGenres }) {
 
-    const [currentPage, setCurrentPage] = React.useState(1)
-    const [cardPerPage] = React.useState(15)
+    const [currentPage, setCurrentPage] = useState(1)
+    const [cardPerPage] = useState(15)
 
     const indexOfLastCard = currentPage * cardPerPage
     const indexOfFirstCard = indexOfLastCard - cardPerPage;
@@ -19,6 +20,12 @@ function Videogames({allGames}) {
     const paginate = (pageNumber) => {
          setCurrentPage(pageNumber)
     }
+
+
+    useEffect (() => {
+        getAllGames()
+        getGenres()
+    }, [])
 
     return (
         <div className="container">
@@ -40,4 +47,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null) (Videogames)
+export default connect(mapStateToProps,{ getAllGames, getGenres }) (Videogames)

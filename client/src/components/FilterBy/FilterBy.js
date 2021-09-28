@@ -20,6 +20,12 @@ function FilterBy({orderBy, genres}) {
                     <option value="asc">Higher to lower</option>
                     <option value="desc">Lower to higher</option>
                 </optgroup>
+                <optgroup label="Solo DB">
+                    <option value="DB">Creados</option>
+                </optgroup>
+                <optgroup label="Solo API">
+                    <option value="API">Existentes</option>
+                </optgroup>
                 <optgroup label="Genres">
                     {genres && genres.map(g => <option key={g.name} value={g.name}>{g.name}</option>)}
                 </optgroup>                
