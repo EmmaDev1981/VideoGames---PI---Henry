@@ -41,7 +41,7 @@ router.get('/videogames', async (req, res) => {
             let pages = 0;
             let results = [...videogamesDb];
             let response = await axios.get(`https://api.rawg.io/api/games?key=${APIKEY}`);
-            while (pages < 4) {
+            while (pages < 6) {
                 pages++;
                 response.data.results = response.data.results.reduce((acc, el) => acc.concat({
                     ...el,
@@ -60,6 +60,8 @@ router.get('/videogames', async (req, res) => {
 // GET /videogame/:idVideoGame
 router.get('/videogame/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params
+
+    //me trae el detalle de la DB
     if (idVideogame.includes('-')) {
         let videogameDb = await Videogame.findOne({
             where: {
@@ -76,8 +78,8 @@ router.get('/videogame/:idVideogame', async (req, res) => {
     try {
         const response = await axios.get(`https://api.rawg.io/api/games/${idVideogame}?key=${APIKEY}`);
         let { name, background_image, genres, description, released: releaseDate, rating, platforms } = response.data;
-        genres = genres.map(g => g.name);
-        platforms = platforms.map(p => p.platform.name);
+        genres = genres.map(g => g.name); // de la API me trae un array de objetos, mapeo solo el nombre del genero
+        platforms = platforms.map(p => p.platform.name); // de la API me trae un array de objetos, mapeo solo el nombre de la plataforma
         return res.json({
             name,
             background_image,
@@ -123,7 +125,7 @@ router.post('/videogame', async (req, res) => {
                 platforms,
             }
         })
-        await gameCreated[0].setGenres(genres);
+        await gameCreated[0].setGenres(genres); // relaciono la FK de genres al juego creado
     } catch (err) {
         console.log(err);
     }
