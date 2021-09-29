@@ -3,6 +3,7 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
   // defino el modelo
+  // modelName / attributes / options
   sequelize.define('videogame', {
     name: {
       type: DataTypes.STRING,
@@ -27,5 +28,8 @@ module.exports = (sequelize) => {
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
     }
-  }, {timestamps: false});
+  }, {timestamps: true,
+      createdAt: 'creado',
+      updatedAt: false
+  });
 };
