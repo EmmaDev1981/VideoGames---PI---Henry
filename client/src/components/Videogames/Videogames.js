@@ -15,7 +15,13 @@ function Videogames({allGames, getAllGames, getGenres }) {
 
     const indexOfLastCard = currentPage * cardPerPage
     const indexOfFirstCard = indexOfLastCard - cardPerPage;
+
+    if (allGames === ""){
+        alert('Juego no encontrado')
+        getAllGames()
+    } else {
     var currentCards = allGames.slice(indexOfFirstCard, indexOfLastCard)
+    }
     
     const paginate = (pageNumber) => {
          setCurrentPage(pageNumber)
@@ -34,7 +40,7 @@ function Videogames({allGames, getAllGames, getGenres }) {
             <FilterBy />
             <Pagination cardPerPage={cardPerPage} totalCards={allGames.length} paginate={paginate} currentPage={currentPage} />
             <div className="games-div">
-               {currentCards && currentCards.map((g) => <Videogame key={g.id} name={g.name} genres={g.genres} image={g.background_image} id={g.id}/>)}
+               {currentCards && currentCards.map((g) => <Videogame key={g.id} name={g.name} rating={g.rating} genres={g.genres} image={g.background_image} id={g.id}/>)}
             </div>
             <Pagination cardPerPage={cardPerPage} totalCards={allGames.length} paginate={paginate} currentPage={currentPage} />
         </div>

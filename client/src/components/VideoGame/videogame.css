@@ -35,6 +35,12 @@
     justify-content: center;
 }
 
+.infoRating {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+}
+
 .div-button {
     display: flex;
     justify-content: center;

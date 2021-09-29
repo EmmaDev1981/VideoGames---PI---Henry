@@ -22,6 +22,7 @@ export function getAllGames() {
 export function searchByName(name) {
     return function (dispatch) {
         return axios.get(`http://localhost:3001/videogames?name=${name}`)
+       
         .then(res => {
 
             dispatch({ type: SEARCH_BY_NAME, payload: res.data });
@@ -35,10 +36,11 @@ export function getVideogameDetail(id) {
     return function (dispatch) {
         axios.get(`http://localhost:3001/videogame/${id}`)
         .then(res => {
-
+            
             dispatch({ type: GET_VIDEOGAME_DETAIL, payload: res.data });
         })
         .catch(err => {return err})
+
     }
 }
 

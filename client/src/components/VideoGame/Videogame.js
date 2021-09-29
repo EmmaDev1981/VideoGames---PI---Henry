@@ -6,6 +6,7 @@ import photo from '../../img/notphoto.jpg'
 
 
 export default function Videogame(props) {
+    
     return (
         <div className="container-game">
             <div className="title">
@@ -14,6 +15,9 @@ export default function Videogame(props) {
              <div className="game-div">
                {props.image ? <img src={`${props.image}`} alt="Videogame" className="Img"></img> : <img src={photo} alt="Videogame" className="Img"></img>}
             </div>
+                 <div className="infoRating">
+                     {<p><strong>Rating</strong>: ★ {`${props.rating}`}</p>} 
+                 </div>
                  <div className="infoContGenres">
                     {<p className=""><strong>Genres :</strong> {`${typeof props.genres === 'string' ? props.genres : props.genres.join(', ')}`}</p>}
                  </div>

@@ -15,7 +15,7 @@ function Landing({getAllGames, getGenres}) {
       getGenres();
   });
 
-
+ 
   return (
     <div className="landing-div">
     <div className="img-land">

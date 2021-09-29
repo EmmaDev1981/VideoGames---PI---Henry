@@ -6,6 +6,7 @@ import './CrearJuego.css'
 function CrearJuego(props) {
 
     const [errors, setErrors] = useState({ form: 'Must complete the form' });
+
     const [form, setForm] = useState({
         name: '',
         description: '',
@@ -82,8 +83,9 @@ function CrearJuego(props) {
             return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
         }
         axios.post('http://localhost:3001/videogame', form)
-        alert(`${form.name} created succesfully`)
-        props.history.push('/videogames')
+                  .then(res => console.log(res.data));
+        alert(`${form.name} Creado Correctamente`)
+        props.history.push('/videogames') 
     }
 
     return (
@@ -96,7 +98,7 @@ function CrearJuego(props) {
                     <form onSubmit={handleSubmit} onChange={handleChange}>
                         <label htmlFor='name' className="title-name"><strong>Name: </strong></label>
                         <br />
-                        <input className="name" placeholder='Name' type="text" id='name' name='name' autocomplete="off"/>
+                        <input className="name" placeholder='Name' type="text" id='name' name='name' autoComplete="off"/>
                         <br />
                         <label htmlFor="description" className="title-name"><strong>Description: </strong></label>
                         <br />
@@ -108,7 +110,7 @@ function CrearJuego(props) {
                         <br />
                         <label htmlFor="rating" className="title-name"><strong>Rating: </strong></label>
                         <br />
-                        <input name='rating' className="dt" placeholder='Rate from 1 to 5' type="tel" id="rating" maxLength='1' autocomplete="off"/>
+                        <input name='rating' className="dt" placeholder='Rate from 1 to 5' type="tel" id="rating" maxLength='1' autoComplete="off"/>
                         <br />
                         <label className="title-name"><strong>Genres:</strong></label>
                         <div id='genres' className="genres-div">

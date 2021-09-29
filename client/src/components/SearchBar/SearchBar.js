@@ -4,7 +4,7 @@ import { searchByName, getAllGames } from '../../actions/actions'
 import './SearchBar.css'
 
 
-function SearchBar({searchByName, searchedGame, getAllGames, getGenres}) {
+function SearchBar({searchByName, getAllGames}) {
 
     const [input, setInput] = useState({
         buscar: ''
@@ -32,7 +32,7 @@ function SearchBar({searchByName, searchedGame, getAllGames, getGenres}) {
 
     return (
         <div className="searchbar-div">
-            <input className="searchInput" name='buscar' placeholder="buscá tu juego..." onChange={handleInputChange} value={input.buscar}></input>
+            <input className="searchInput" name='buscar' placeholder="buscá tu juego..." onChange={handleInputChange} value={input.buscar} autoComplete="off"></input>
             <button className="btn" onClick={handleOnClick}>Buscar</button>
             <button className="btn" onClick={handleOnClickAll}>Todos</button>
         </div>

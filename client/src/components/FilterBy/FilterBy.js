@@ -11,7 +11,7 @@ function FilterBy({orderBy, genres}) {
     return (
         <div className='container-div'>
             <select  className="selectCont" onChange={handleSelect} name="" id="">
-                <option value="default" selected>Order by default....</option>
+                <option value="default">Order by default....</option>
                 <optgroup label="Alphabetic">
                     <option value="A-Z">A - Z</option>
                     <option value="Z-A">Z - A</option>
