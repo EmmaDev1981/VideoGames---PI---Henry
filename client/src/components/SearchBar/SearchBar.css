@@ -4,9 +4,30 @@
     height: 50px;
     align-items: center;
     justify-content: center;
-    border: 2px solid black;
 }
 
 .btn {
     margin-left: 5px;
+    font-family: 'Press Start 2P';
+    padding: 10px;
+    margin: 20px;
+    margin-left: 80px;
+}
+
+.bar-btn {
+    margin-left: 5px;
+    font-family: 'Press Start 2P';
+    padding: 10px;
+    margin: 20px;
+    width: 440px;
+}
+
+.btn:hover {
+    background-color: black;
+    color: aliceblue;
+}
+
+.bar-btn:hover {
+    background-color: black;
+    color: aliceblue;
 }

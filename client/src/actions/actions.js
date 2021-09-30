@@ -5,7 +5,8 @@ import { GET_ALL_GAMES,
          SEARCH_BY_NAME, 
          GET_VIDEOGAME_DETAIL,
          GET_GENRES,
-         ORDER_BY } from './constantes'
+         ORDER_BY,
+         FILTER_BY } from './constantes'
 
 //* carga todos los juegos
 export function getAllGames() {
@@ -60,5 +61,12 @@ export function getGenres(){
 export function orderBy(order) {
     return function (dispatch) {
         dispatch({type: ORDER_BY, payload: order})
+    }
+}
+
+//* filtrado
+export function filterBy(order) {
+    return function (dispatch) {
+        dispatch({type: FILTER_BY, payload: order})
     }
 }

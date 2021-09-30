@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { getAllGames, getGenres } from '../../actions/actions';
 
 //*CSS
-import imagen2 from '../../img/75zW.gif'
+// import imagen2 from '../../img/75zW.gif'
 import './landing.css'
 
 function Landing({getAllGames, getGenres}) {
@@ -17,11 +17,11 @@ function Landing({getAllGames, getGenres}) {
 
  
   return (
-    <div className="landing-div">
-    <div className="img-land">
-      <img src={imagen2} alt=""/>
-    </div>
-      <Link to="/videogames"><button className="btn-enter">Ingresar</button></Link>
+    <div className="MyImage">
+        <img classNamw="theImage" src="" alt="" />
+        <Link to="/videogames">
+          <button className="myButton">INSERT COIN</button>
+        </Link>
     </div>
   );
 }

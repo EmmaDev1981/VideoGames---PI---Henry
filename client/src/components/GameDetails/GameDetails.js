@@ -2,7 +2,7 @@ import {React, useEffect} from 'react'
 import { connect }from 'react-redux'
 import { getVideogameDetail } from '../../actions/actions'
 import Navbar from '../NavBar/NavBar'
-import photo from '../../img/notphoto.jpg'
+import photo from '../../img/created.jpg'
 import { NavLink } from 'react-router-dom'
 import './gamedetail.css'
 
@@ -30,7 +30,7 @@ function GameDetails(props) {
                         {<p className="descripcion">{gameDetails.description.replace(/(<([^>]+)>)/ig, '')}</p>}
                         {<p><strong>Genres</strong>: {`${gameDetails.genres.join(', ')}`}</p>}
                         {<p><strong>Platforms</strong>: {`${typeof gameDetails.platforms === 'string' ? gameDetails.platforms : gameDetails.platforms.join(', ')}`}</p>}
-                        <NavLink to="/videogames"><h3>Volver</h3></NavLink>
+                        <NavLink to="/videogames"><button>Volver</button></NavLink>
                     </div> : <h1>Cargando</h1>}
                     
                     </div> : <h1>Cargando</h1>}

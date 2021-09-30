@@ -1,5 +1,10 @@
 .container-detail {
     justify-content: center;
+    background-image: url("../../img/details.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;  
 }
 
 .details-div {
@@ -7,11 +12,13 @@
     justify-content: center;
     border: 1px solid black;
     margin: 10px;
+    z-index: 1;
 }
 
 .details-div p {
     display: flex;
     justify-content: center;
+    color: aliceblue;
 }
 
 .div-img {
@@ -34,6 +41,7 @@
     display: flex;
     justify-content: center;
     font-size:xx-large;
+    color: white;
 }
 
 .div-descr {
@@ -49,9 +57,16 @@
     text-align: justify;
 }
 
-.div-descr h3 {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    padding: 10px;
+.div-descr button {
+    margin: 5px;
+    width: 100px;
+    height: 40px;
+    font-family: 'Press Start 2P';
+    position: relative;
+    left: 47%;
+}
+
+.div-descr button:hover {
+    background-color: black;
+    color: aliceblue;
 }

@@ -1,24 +1,29 @@
 .main-add {
     display: flex;
     justify-content: center;
+    background: #fff url('../../img/mario.gif') center center/cover no-repeat;
 
 }
-
 
 .container-add {
 
+    text-align: center;
     margin: 40px;
     padding: 20px;
     padding-bottom: 20px;
-    border: 5px solid black;
+    /* border: 5px solid black; */
     width: 800px;
-    background-color: coral;
+    /* background-color: coral; */
     height: 590px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+    /* box-shadow: 5px 5px 10px 1px #3b1887; */
 }
 
 .container-add h2 {
+    
     text-align: center;
+    font-family: 'Press Start 2P';
+    color: white
 }
 
 .div-cont {
@@ -68,11 +73,14 @@
 }
 
 .div-but-form button {
-    width: 100px;
-    height: 40px;
-    background-color: blanchedalmond;
-    font-size: 15px;
-    border-radius: 15px;
+    font-family: 'Press Start 2P';
+    padding: 10px;
+    margin: 20px;
+}
+
+.div-but-form button:hover {
+    background-color: black;
+    color: #fff;
 }
 
 .container-add input {

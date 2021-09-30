@@ -1,6 +1,9 @@
 .games-div {
-    border: 2px solid black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.nonono {
+    width: 800px;
 }

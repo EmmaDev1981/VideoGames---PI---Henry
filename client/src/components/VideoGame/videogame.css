@@ -5,6 +5,13 @@
     padding: 20px;
     border-radius: 10px;
     background-color: beige;
+    box-shadow: 6px 5px 9px 1px #6a108f;
+
+}
+
+.container-game:hover {
+    animation: myAnim 1s ease 0s 1 normal forwards;;
+    cursor: pointer;
 }
 
 .game-div {
@@ -13,6 +20,7 @@
     overflow: hidden;
     width: 400px;
     height: 600px;
+    
 }
 
 .game-div img {
@@ -22,7 +30,7 @@
     border-radius: 10px;
 }
 
-.title {
+.title-game {
     display: flex;
     justify-content: center;
     margin: 10px;
@@ -49,3 +57,28 @@
 button {
     cursor: pointer;
 }
+
+.Link {
+    font-family: 'Press Start 2P';
+    width: 120px;
+    height: 40px;
+}
+
+.Link:hover {
+    background-color: black;
+    color: aliceblue;
+}
+
+@keyframes myAnim {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }

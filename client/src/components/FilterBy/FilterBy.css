@@ -1,10 +1,27 @@
 .container-div{
     display: flex;
     justify-content: center;
-    border: 1px solid black;
 }
 
 .selectCont {
+    padding: 10px;
     margin: 20px;
-    width: 300px;
+    margin-right: 100px;
+    width: 400px;
+    font-family: 'Press Start 2P';
+}
+
+.option {
+    margin: 5px;
+    font-family: 'Press Start 2P';
+}
+
+.optionGroup {
+    padding: 10px;
+    font-family: 'Press Start 2P';
+}
+
+.selectCont:hover {
+    background-color: black;
+    color: aliceblue;
 }

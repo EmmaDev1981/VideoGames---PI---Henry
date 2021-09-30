@@ -3,11 +3,16 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        border: 2px solid black;
 }
 
-h3 {
-        text-decoration: none;
+.navbar-div button{
+        font-family: 'Press Start 2P';
         padding: 10px;
+        margin: 20px;
+        margin-left: 80px;
 }
 
+.navbar-div button:hover {
+        background-color: black;
+        color: aliceblue;
+}
