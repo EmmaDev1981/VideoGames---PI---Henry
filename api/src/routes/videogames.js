@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
     videogamesDb = JSON.stringify(videogamesDb);
     videogamesDb = JSON.parse(videogamesDb);
     //Aca dejamos el arreglo de generos plano con solo los nombres de cada genero
+    //TODO chequear que los genres en la DB ya estan OK, no hace falta esto, probar!!!!
     videogamesDb = videogamesDb.reduce((acc, el) => acc.concat({
         ...el,
         genres: el.genres.map(g => g.name)
@@ -22,7 +23,7 @@ router.get('/', async (req, res) => {
     if (req.query.name) {
         try {
             let response = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${APIKEY}`);
-            if (!response.data.count) return res.status(204).json(`No se encontro ningun videojuego con el nombre "${req.query.name}"`);
+            if (!response.data.count) return res.status(204).json(`Juego no encontrado "${req.query.name}"`);
             const gamesREADY = response.data.results.map(game => {
                 return{
                     id: game.id,

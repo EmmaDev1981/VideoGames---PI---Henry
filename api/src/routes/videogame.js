@@ -6,10 +6,11 @@ const axios = require('axios').default;
 const { Videogame, Genre } = require('../db');
 
 // GET /videogame/:idVideoGame
+// consulto el detalle del juego por el ID
 router.get('/:idVideogame', async (req, res) => {
     const { idVideogame } = req.params
     
-    //me trae el detalle de la DB
+    //verifico si es un juego creado y me trae el detalle de la DB
     if (idVideogame.includes('-')) {
         let videogameDb = await Videogame.findOne({
             where: {

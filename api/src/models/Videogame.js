@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true
-    }
+    },
   }, {timestamps: true,
       createdAt: 'creado',
       updatedAt: false
