@@ -5,25 +5,31 @@ const router = Router();
 const axios = require('axios').default;
 const { Videogame, Genre } = require('../db');
 
-// GET a '/videogames
+
+//TODO -----> GET a "/videogames" <--------
+
 router.get('/', async (req, res) => {
+    //busco en la DB si tengo juegos creados y me traigo todos
     let videogamesDb = await Videogame.findAll({
         include: Genre
     });
-    //Parseamos el objeto recibido de findAll porque es una referencia circular (?)
+    //Parseo el objeto recibido de findAll porque es una referencia circular (Google...)
     videogamesDb = JSON.stringify(videogamesDb);
     videogamesDb = JSON.parse(videogamesDb);
-    //Aca dejamos el arreglo de generos plano con solo los nombres de cada genero
-    //TODO chequear que los genres en la DB ya estan OK, no hace falta esto, probar!!!!
+    //Aca dejo el arreglo de generos plano con solo los nombres de cada genero(llega array de objetos)
     videogamesDb = videogamesDb.reduce((acc, el) => acc.concat({
         ...el,
         genres: el.genres.map(g => g.name)
     }), [])
     
+    //TODO QUERIES --------> GET /videogames?name="..." <-----------
+    // si llegan queries "name" lo agarro por aca
     if (req.query.name) {
         try {
+            //busco si existe el juego en la API
             let response = await axios.get(`https://api.rawg.io/api/games?search=${req.query.name}&key=${APIKEY}`);
             if (!response.data.count) return res.status(204).json(`Juego no encontrado "${req.query.name}"`);
+            //filtro SOLO la data que necesito para enviarle al front
             const gamesREADY = response.data.results.map(game => {
                 return{
                     id: game.id,
@@ -33,24 +39,24 @@ router.get('/', async (req, res) => {
                     genres: game.genres.map(g => g.name)
                 }
             });
+
+            //como antes me traje TODOS de la base de datos, si entro por queries, solo filtro los que coincidan con la busqueda
             const filteredGamesDb = videogamesDb.filter(g => g.name.toLowerCase().includes(req.query.name.toLowerCase()));
+            //doy prioridad a la DB, y sumo todos, y corto el array en 15
             const results = [...filteredGamesDb, ...gamesREADY.splice(0, 15)];
             return res.json(results)
         } catch (err) {
             return console.log(err)
         }
     } else {
+        // SI NO ENTRO POT QUERIES --> voy a buscar todos los juegos a la API
         try {
             let pages = 0;
-            let results = [...videogamesDb];
+            let results = [...videogamesDb]; //sumo lo que tengo en la DB
             let response = await axios.get(`https://api.rawg.io/api/games?key=${APIKEY}`);
             while (pages < 6) {
                 pages++;
-                // response.data.results = response.data.results.reduce((acc, el) => acc.concat({
-                //     // ...el,
-                //     id:  el.id,
-                //     genres: el.genres.map(g => g.name)
-                // }), [])
+                //filtro solo la DATA que necesito enviar al FRONT
                 const gammesREADY = response.data.results.map(game => {
 					return{
 						id: game.id,
@@ -61,7 +67,7 @@ router.get('/', async (req, res) => {
 					}
 				});
                 results = [...results, ...gammesREADY]
-                response = await axios.get(response.data.next)
+                response = await axios.get(response.data.next) //vuelvo a llamar a la API con next
             }
             return res.json(results)
         } catch (err) {
