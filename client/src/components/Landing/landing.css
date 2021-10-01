@@ -1,18 +1,17 @@
 
  .myButton{
       position: absolute;
-      left:50%;
-      z-index:1;
+      left:45%;
       top:20%;
       animation: myAnim 1s ease 0s infinite normal forwards;
-     }
+ }
 
 .MyImage button {
     font-family: 'Press Start 2P';
-    height: 100px;
+    height: 60px;
     width: 180px;
     border-radius: 5px;
-    border: 5px solid orangered;
+    border: 3px solid orangered;
     background-color: chartreuse;
     background: linear-gradient(90deg,chartreuse 10%, #fff 100%);
 }

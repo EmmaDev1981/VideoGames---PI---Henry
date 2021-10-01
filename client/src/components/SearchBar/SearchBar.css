@@ -11,23 +11,24 @@
     font-family: 'Press Start 2P';
     padding: 10px;
     margin: 20px;
-    margin-left: 80px;
+    border-radius: 30px;
+    background-color: rgb(224, 64, 176);
 }
 
 .bar-btn {
-    margin-left: 5px;
     font-family: 'Press Start 2P';
     padding: 10px;
     margin: 20px;
-    width: 440px;
+    width: 380px;
+    background-color: wheat;
+    border-radius: 20px;
 }
 
 .btn:hover {
     background-color: black;
-    color: aliceblue;
+    color: rgb(224, 64, 176);
 }
 
 .bar-btn:hover {
-    background-color: black;
-    color: aliceblue;
+    background-color:bisque
 }

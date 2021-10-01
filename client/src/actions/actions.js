@@ -1,6 +1,4 @@
 import axios from 'axios';
-
-//* importo constantes
 import { GET_ALL_GAMES,
          SEARCH_BY_NAME, 
          GET_VIDEOGAME_DETAIL,
@@ -8,7 +6,8 @@ import { GET_ALL_GAMES,
          ORDER_BY,
          FILTER_BY } from './constantes'
 
-//* carga todos los juegos
+
+//* Trae todos los juegos (DB + API)
 export function getAllGames() {
     return function(dispatch) {
         return axios.get('http://localhost:3001/videogames/')
@@ -19,7 +18,7 @@ export function getAllGames() {
     }
 }
 
-//* carga todos los juegos buscados por nombre
+//* Trae todos los juegos encontrados por nombre (QUERY: "name")
 export function searchByName(name) {
     return function (dispatch) {
         return axios.get(`http://localhost:3001/videogames?name=${name}`)
@@ -32,7 +31,7 @@ export function searchByName(name) {
     }
 }
 
-//* cargo los detalles del juego por ID
+//* Trae los detalles del juego por pasado por (params :ID)
 export function getVideogameDetail(id) {
     return function (dispatch) {
         axios.get(`http://localhost:3001/videogame/${id}`)
@@ -45,7 +44,7 @@ export function getVideogameDetail(id) {
     }
 }
 
-//* cargo todos los generos
+//* Trae todos los generos
 export function getGenres(){
 	return function(dispatch){
 		axios.get(`http://localhost:3001/genres`)
@@ -57,14 +56,14 @@ export function getGenres(){
     }
 }
 
-//* ordenamiento
+//* Ordenamiento
 export function orderBy(order) {
     return function (dispatch) {
         dispatch({type: ORDER_BY, payload: order})
     }
 }
 
-//* filtrado
+//* Filtrado
 export function filterBy(order) {
     return function (dispatch) {
         dispatch({type: FILTER_BY, payload: order})

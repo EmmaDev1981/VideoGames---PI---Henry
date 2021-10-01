@@ -1,11 +1,12 @@
 .container-game {
+    
     flex-wrap: wrap;
     border: 1px solid black;
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
     background-color: beige;
-    box-shadow: 6px 5px 9px 1px #6a108f;
+    box-shadow: 6px 5px 9px 4px #108f1b;
 
 }
 
@@ -19,7 +20,7 @@
     margin: 10px;
     overflow: hidden;
     width: 400px;
-    height: 600px;
+    height: 400px;
     
 }
 
@@ -33,9 +34,10 @@
 .title-game {
     display: flex;
     justify-content: center;
-    margin: 10px;
-    font-size: larger;
+    margin-bottom: 20px;
+    font-size:x-large;
     font-weight: 600;
+    color: #1411d1;
 }
 
 .infoContGenres {
@@ -62,6 +64,8 @@ button {
     font-family: 'Press Start 2P';
     width: 120px;
     height: 40px;
+    border-radius: 20px;
+    box-shadow: 3px 2px 3px 1px #1411d1;
 }
 
 .Link:hover {

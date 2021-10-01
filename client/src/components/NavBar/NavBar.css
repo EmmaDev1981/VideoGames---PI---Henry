@@ -9,10 +9,11 @@
         font-family: 'Press Start 2P';
         padding: 10px;
         margin: 20px;
-        margin-left: 80px;
+        border-radius: 30px;
+        background-color: turquoise;
 }
 
 .navbar-div button:hover {
         background-color: black;
-        color: aliceblue;
+        color:turquoise
 }

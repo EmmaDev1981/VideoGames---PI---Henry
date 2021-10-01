@@ -31,18 +31,23 @@ function SearchBar({searchByName, getAllGames}) {
     }
 
     return (
-        <div className="searchbar-div">
-            <input className="bar-btn" name='buscar' placeholder="buscá tu juego..." onChange={handleInputChange} value={input.buscar} autoComplete="off"></input>
-            <button className="btn" onClick={handleOnClick}>Buscar</button>
-            <button className="btn" onClick={handleOnClickAll}>Todos</button>
-        </div>
-    )
+      <div className="searchbar-div">
+        <input
+          className="bar-btn"
+          name="buscar"
+          placeholder="buscá tu juego..."
+          onChange={handleInputChange}
+          value={input.buscar}
+          autoComplete="off"
+        ></input>
+        <button className="btn" onClick={handleOnClick}>
+          Buscar
+        </button>
+        <button className="btn" onClick={handleOnClickAll}>
+          CargarTodos
+        </button>
+      </div>
+    );
 }
 
-function mapStatetoProps (state) {
-    return {
-        searchedGame: state.allGames
-    }
-}
-
-export default connect(mapStatetoProps, { searchByName, getAllGames })(SearchBar)
+export default connect(null, { searchByName, getAllGames })(SearchBar)

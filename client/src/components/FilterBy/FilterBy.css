@@ -6,9 +6,9 @@
 .selectCont {
     padding: 10px;
     margin: 20px;
-    margin-right: 100px;
     width: 400px;
     font-family: 'Press Start 2P';
+    border-radius: 20px;
 }
 
 .option {
@@ -19,9 +19,4 @@
 .optionGroup {
     padding: 10px;
     font-family: 'Press Start 2P';
-}
-
-.selectCont:hover {
-    background-color: black;
-    color: aliceblue;
 }

@@ -79,7 +79,7 @@ function CrearJuego(props) {
         let checkboxsErrors = []
         if (form.genres.length < 1) checkboxsErrors.push('Genres is required');
         if (form.platforms.length < 1) checkboxsErrors.push('Platforms is required');
-        if (Object.values(errors).length || checkboxsErrors.length) {
+        if (Object.values(errors).length || checkboxsErrors.length) { // Object.values --> retorno un array con los values
             return alert(Object.values(errors).concat(checkboxsErrors).join('\n'));
         }
         axios.post('http://localhost:3001/videogame', form)

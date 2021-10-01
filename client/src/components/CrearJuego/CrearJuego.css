@@ -1,7 +1,7 @@
 .main-add {
     display: flex;
     justify-content: center;
-    background: #fff url('../../img/mario.gif') center center/cover no-repeat;
+    background: #fff url('../../img/crear.jpg') center center/cover no-repeat;
 
 }
 
@@ -10,20 +10,16 @@
     text-align: center;
     margin: 40px;
     padding: 20px;
-    padding-bottom: 20px;
-    /* border: 5px solid black; */
     width: 800px;
-    /* background-color: coral; */
-    height: 590px;
-    /* border-radius: 15px; */
-    /* box-shadow: 5px 5px 10px 1px #3b1887; */
+    height: 650px;
 }
 
 .container-add h2 {
     
     text-align: center;
     font-family: 'Press Start 2P';
-    color: white
+    font-size: xx-large;
+    color:black
 }
 
 .div-cont {
@@ -38,7 +34,7 @@
     border: 1px solid black;
     width:650px;
     border-radius: 10px;
-    background-color: blanchedalmond;
+    background-color: rgb(241, 154, 22);
 }
 
 .plat-div {
@@ -48,7 +44,7 @@
     border: 1px solid black;
     width:650px;
     border-radius: 10px;
-    background-color: blanchedalmond;
+    background-color: rgb(241, 154, 22);
 }
 
 .container-add label {
@@ -59,11 +55,13 @@
 .name{
     height: 25px;
     width: 400px;
+    border-radius: 30px;
 }
 
 .dt {
     height: 25px;
-    width: 200px;
+    width: 120px;
+    border-radius: 30px;
 }
 
 .div-but-form {
@@ -76,6 +74,8 @@
     font-family: 'Press Start 2P';
     padding: 10px;
     margin: 20px;
+    border-radius: 20px;
+    background-color: chartreuse;
 }
 
 .div-but-form button:hover {
@@ -84,9 +84,9 @@
 }
 
 .container-add input {
-    background-color: blanchedalmond;
+    background-color: rgb(241, 154, 22);
 }
 
 .container-add textarea {
-    background-color: blanchedalmond;
+    background-color: rgb(241, 154, 22);
 }

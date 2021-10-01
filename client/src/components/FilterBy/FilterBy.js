@@ -43,7 +43,7 @@ function FilteredBy({orderBy, genres, filterBy}) {
 
 const mapStateToProps = (state) => {
     return {
-        // allGames: state.allGames,
+
         genres: state.genres
     }
 }

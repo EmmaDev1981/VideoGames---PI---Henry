@@ -1,4 +1,3 @@
-//* importo constantes
 import { GET_ALL_GAMES, 
          SEARCH_BY_NAME,
          GET_VIDEOGAME_DETAIL,
