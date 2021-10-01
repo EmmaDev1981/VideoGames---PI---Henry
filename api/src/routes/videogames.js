@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
     let videogamesDb = await Videogame.findAll({
         include: Genre
     });
-    //Parseo el objeto recibido de findAll porque es una referencia circular (Google...)
+    //Parseo el objeto
     videogamesDb = JSON.stringify(videogamesDb);
     videogamesDb = JSON.parse(videogamesDb);
     //Aca dejo el arreglo de generos plano con solo los nombres de cada genero(llega array de objetos)

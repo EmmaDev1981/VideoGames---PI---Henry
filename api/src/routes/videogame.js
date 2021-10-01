@@ -21,7 +21,7 @@ router.get('/:idVideogame', async (req, res) => {
             },
             include: Genre
         })
-        //Parseo el objeto recibido de findAll porque es una referencia circular (Google...)
+        //Parseo el objeto
         videogameDb = JSON.stringify(videogameDb);
         videogameDb = JSON.parse(videogameDb);
         
@@ -67,7 +67,7 @@ router.post('/', async (req, res) => {
                 platforms,
             }
         })
-        await gameCreated[0].setGenres(genres); // relaciono genres al juego creado
+        await gameCreated[0].setGenres(genres); // relaciono ID genres al juego creado
     } catch (err) {
         console.log(err);
     }
