@@ -73,6 +73,7 @@ function CrearJuego(props) {
         }
         return errors;
     }
+
     const handleSubmit = e => {
         e.preventDefault()
         validate(form);
@@ -115,11 +116,11 @@ function CrearJuego(props) {
                         <label className="title-name"><strong>Genres:</strong></label>
                         <div id='genres' className="genres-div">
                             <div className="Action">
-                                <input name='Action' value='1' type="checkbox" id="Action" />
+                                <input name='Action' value='2' type="checkbox" id="Action" />
                                 <label htmlFor="Action">Action.</label>
                             </div>
                             <div className="indie">
-                                <input name='Indie' value='2' type="checkbox" id="Indie" />
+                                <input name='Indie' value='1' type="checkbox" id="Indie" />
                                 <label htmlFor="Indie">Indie.</label>
                             </div>
                             <div className="Adventure">
