@@ -4,8 +4,29 @@
   <img height="200" src="./videogame.png" />
 </p>
 
-## Trabajo finalizado:
+## LANDING:
 
+<p>
+  <img height="600" src="./Intro.jpg" />
+</p>
+
+## HOME:
+
+<p>
+  <img height="600" src="./home.jpg" />
+</p>
+
+## CREATE:
+
+<p>
+  <img height="620" src="./Create.jpg" />
+</p>
+
+## DETAILS:
+
+<p>
+  <img height="675" src="./DetailsGit.jpg" />
+</p>
 
 
 ## Objetivos del Proyecto
