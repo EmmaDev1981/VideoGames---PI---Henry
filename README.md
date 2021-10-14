@@ -4,6 +4,8 @@
   <img height="200" src="./videogame.png" />
 </p>
 
+API Rest- React - Redux - Node JS - Express - Sequelize - Postgres - others
+
 ## LANDING:
 
 <p>
