@@ -25,12 +25,12 @@
     "morgan": "^1.10.0",
     "op": "0.0.6",
     "pg": "^8.5.1",
+    "nodemon": "^2.0.14",
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.2.1",
-    "nodemon": "^2.0.6",
     "supertest": "^6.1.6",
     "supertest-session": "^4.1.0"
   }
