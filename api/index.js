@@ -32,7 +32,7 @@ var local = "";
 if(process.env.PORT == 3001){
   local = "http://localhost:3001";
 }else{
-  local = "https://videogames-pi-henry.herokuapp.com/";
+  local = "https://videogames-pi-henry.herokuapp.com";
 }
 
 // Syncing all the models at once.
