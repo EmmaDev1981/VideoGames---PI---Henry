@@ -9,8 +9,8 @@ function About() {
         <>
         <NavBar />
         <div className="container-about">
-            <h1>Individual Project - Henry Videogames</h1>
-            <h1>Emmanuel Navas - 16B</h1>
+            <h1>Individual Project</h1>
+            <h1>Emmanuel Navas</h1>
             <div className="div-foto">
                <img src={imagen} alt="foto"></img>
             </div>
