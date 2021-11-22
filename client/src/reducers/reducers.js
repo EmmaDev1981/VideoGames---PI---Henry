@@ -83,7 +83,6 @@ export default function rootReducer(state = initialState, action) {
                 else {
                     return {...state, filtered: state.gamesBackUp}
                     };
-
         default: 
             return state;
     }
