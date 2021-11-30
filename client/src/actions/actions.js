@@ -21,7 +21,6 @@ export function getAllGames() {
       });
   };
 }
-
 //* Trae todos los juegos encontrados por nombre (QUERY: "name")
 export function searchByName(name) {
   return function (dispatch) {
@@ -36,7 +35,6 @@ export function searchByName(name) {
       });
   };
 }
-
 //* Trae los detalles del juego por pasado por (params :ID)
 export function getVideogameDetail(id) {
   return function (dispatch) {
@@ -50,7 +48,6 @@ export function getVideogameDetail(id) {
       });
   };
 }
-
 //* Trae todos los generos
 export function getGenres() {
   return function (dispatch) {
