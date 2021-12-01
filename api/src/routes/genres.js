@@ -5,8 +5,6 @@ const router = Router();
 const axios = require('axios').default;
 const { Genre } = require('../db');
 
-
-
 //TODO -----> GET a "/genres" <--------
 
 router.get('/', async (req, res) => {
@@ -33,9 +31,7 @@ router.get('/', async (req, res) => {
                 name: game.name
             }
         });
-        
         res.json(genresREADY)
-
     } catch (err) {
         return console.log(err)
     }
