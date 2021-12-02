@@ -16,7 +16,6 @@ const initialState = {
 export default function rootReducer(state = initialState, action) {
 
     switch (action.type) {
-
            case GET_ALL_GAMES:
                 return {
                 ...state,
@@ -85,8 +84,7 @@ export default function rootReducer(state = initialState, action) {
                       
                 if(action.payload === 'asc'){
                     return {...state, filtered: [...state.filtered].sort((prev,next) => next.rating - prev.rating)}
-                    }
-                      
+                    }     
                 else {
                     return {...state, filtered: state.gamesBackUp}
                     };
