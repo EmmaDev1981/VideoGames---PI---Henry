@@ -16,7 +16,6 @@ function GameDetails(props) {
     getVideogameDetail(idVideogame);
     },[idVideogame])
 
-
     return (
       <div className="container-detail">
         <Navbar />
@@ -82,7 +81,6 @@ function GameDetails(props) {
       </div>
     );
 }
-
 
 const mapStateToProps = (state) => {
     return {
