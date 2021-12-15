@@ -23,7 +23,6 @@ export default function rootReducer(state = initialState, action) {
                 gamesBackUp: action.payload,
                 filtered: action.payload
             };
-
             case GET_VIDEOGAME_DETAIL:
                 return {
                 ...state,
