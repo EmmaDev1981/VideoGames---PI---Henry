@@ -5,6 +5,7 @@ import { GET_ALL_GAMES,
          ORDER_BY,
          FILTER_BY } from "../actions/constantes";
 
+
 const initialState = {
     allGames: [],
     gamesBackUp: [],
@@ -12,6 +13,7 @@ const initialState = {
     genres: [],
     filtered: []
 };
+
 
 export default function rootReducer(state = initialState, action) {
 
