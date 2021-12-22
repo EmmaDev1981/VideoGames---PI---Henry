@@ -22,12 +22,12 @@ export function getAllGames() {
   };
 }
 
+
 //* Trae todos los juegos encontrados por nombre (QUERY: "name")
 export function searchByName(name) {
   return function (dispatch) {
     return axios
       .get(`/videogames?name=${name}`)
-
       .then((res) => {
         dispatch({ type: SEARCH_BY_NAME, payload: res.data });
       })
