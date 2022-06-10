@@ -26,6 +26,7 @@ describe('Videogame model', () => {
   });
 });
 
+
 describe('Genre model', () => {
   before(() => conn.authenticate()
     .catch((err) => {
