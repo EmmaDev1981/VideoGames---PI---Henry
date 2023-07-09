@@ -17,8 +17,6 @@ Topic: Retro Design App dedicated to find Information from more than 500.000 gam
 - [ ] Postgres
 - [ ] JEST (Unit Test)
 
-DEPLOY: https://video-games-pi-henry.vercel.app/
-
 ## LANDING:
 
 <p>
