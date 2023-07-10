@@ -37,18 +37,8 @@ const {
 
       let sequelize =
   process.env.NODE_ENV === "production"
-    ? new Sequelize({connectionString: process.env.POSTGRES_URL + "?sslmode=require", })
-          : new Sequelize(POSTGRES_URL + "?sslmode=require", {
-            dialectOptions: {
-              ssl: {
-                require: true,
-                // Ref.: https://github.com/brianc/node-postgres/issues/2009
-                rejectUnauthorized: false,
-              },
-              keepAlive: true,
-            },
-            ssl: true,
-          })
+    ? new Sequelize(POSTGRES_URL + "?sslmode=require", {dialect: 'postgres'})
+          : new Sequelize(POSTGRES_URL + "?sslmode=require", {dialect: 'postgres'})
 
 const basename = path.basename(__filename);
 
