@@ -9,7 +9,9 @@ import store from './store/index';
 import axios from 'axios';
 // dotenv.config()
 
-axios.defaults.baseURL = REACT_APP_API || "http://localhost:3001"
+// axios.defaults.baseURL = REACT_APP_API || "http://localhost:3001"
+axios.defaults.baseURL = "https://video-games-pi-henry-api.vercel.app"
+
 
 ReactDOM.render(
   <React.StrictMode>
