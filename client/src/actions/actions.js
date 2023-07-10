@@ -22,7 +22,6 @@ export function getAllGames() {
   };
 }
 
-
 //* Trae todos los juegos encontrados por nombre (QUERY: "name")
 export function searchByName(name) {
   return function (dispatch) {
