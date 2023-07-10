@@ -4,6 +4,8 @@
   <img height="200" src="./videogame.png" />
 </p>
 
+Deploy: https://video-games-pi-henry-client.vercel.app/
+
 Topic: Retro Design App dedicated to find Information from more than 500.000 games data base API.
        Where users can filter, order, learn and even create their own games register.
 
