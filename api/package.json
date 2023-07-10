@@ -23,17 +23,17 @@
     "dotenv": "^8.2.0",
     "express": "^4.18.2",
     "ioredis": "^4.19.2",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.14",
+    "nodemon": "^3.0.1",
     "op": "0.0.6",
-    "pg": "^8.5.1",
+    "pg": "^8.11.1",
     "react-scripts": "^5.0.1",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^8.2.1",
+    "mocha": "^10.2.0",
     "supertest": "^6.3.3",
     "supertest-session": "^4.1.0"
   }
