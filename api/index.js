@@ -25,7 +25,8 @@ const axios = require('axios');
 const dot = require('dotenv')
 
 dot.config()
-axios.defaults.baseURL = 'http://localhost:3001';
+// axios.defaults.baseURL = 'http://localhost:3001';
+axios.defaults.baseURL = "https://video-games-pi-henry-api.vercel.app"
 
 var local = "";
 
