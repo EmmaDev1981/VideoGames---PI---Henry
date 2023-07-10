@@ -49,5 +49,10 @@
   },
   "devDependencies": {
     "dotenv-webpack": "^8.0.1"
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
   }
 }
